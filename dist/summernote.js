@@ -7,6 +7,9 @@
  *
  * Date: 2018-11-24T12:13Z
  */
+
+/** Edited to avoid some styles issues on the `Link dialog` for presto .mterial theme */
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery')) :
   typeof define === 'function' && define.amd ? define(['jquery'], factory) :
@@ -178,12 +181,15 @@
           $node.find('.arrow').hide();
       }
   });
-  var checkbox = renderer.create('<div class="checkbox"></div>', function ($node, options) {
+
+  /** presto.material : Remove checkbox class */
+  var checkbox = renderer.create('<div></div>', function ($node, options) {
       $node.html([
           '<label' + (options.id ? ' for="' + options.id + '"' : '') + '>',
           ' <input role="checkbox" type="checkbox"' + (options.id ? ' id="' + options.id + '"' : ''),
           (options.checked ? ' checked' : ''),
-          ' aria-checked="' + (options.checked ? 'true' : 'false') + '"/>',
+          /** presto.material : Add &nbsp; to space checkbox and label */
+          ' aria-checked="' + (options.checked ? 'true' : 'false') + '"/>&nbsp;',
           (options.text ? options.text : ''),
           '</label>'
       ].join(''));
@@ -6140,7 +6146,8 @@
                   }).render()).html()
                   : ''
           ].join('');
-          var buttonClass = 'btn btn-primary note-btn note-btn-primary note-link-btn';
+          /** presto.material : Removed all button classes. Only kept note-link-btn used in javascript as click trigger */
+          var buttonClass = 'note-link-btn';
           var footer = "<input type=\"button\" href=\"#\" class=\"" + buttonClass + "\" value=\"" + this.lang.link.insert + "\" disabled>";
           this.$dialog = this.ui.dialog({
               className: 'link-dialog',
