@@ -8,7 +8,7 @@
  * Date: 2018-11-24T12:13Z
  */
 
-/** Edited to avoid some styles issues on the `Link dialog` for presto .mterial theme */
+/** Edited to avoid some styles issues on the `Link dialog` for presto .material theme */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery')) :
