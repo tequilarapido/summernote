@@ -6042,6 +6042,9 @@
           }
       };
       Toolbar.prototype.followScroll = function () {
+          // https://github.com/summernote/summernote/issues/2722#issue-302130057
+          if (this.options.dialogsInBody) { return false; }
+
           if (this.$editor.hasClass('fullscreen')) {
               return false;
           }
