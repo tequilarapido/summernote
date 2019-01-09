@@ -182,6 +182,7 @@
       }
   });
 
+  // @tequilarapido
   /** presto.material : Remove checkbox class */
   var checkbox = renderer.create('<div></div>', function ($node, options) {
       $node.html([
@@ -6042,6 +6043,7 @@
           }
       };
       Toolbar.prototype.followScroll = function () {
+          // @tequilarapido
           // https://github.com/summernote/summernote/issues/2722#issue-302130057
           if (this.options.dialogsInBody) { return false; }
 
